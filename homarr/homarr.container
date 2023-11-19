@@ -1,0 +1,17 @@
+[Unit]
+Description=Homarr Quadlet
+
+[Container]
+Image=ghcr.io/ajnart/homarr:latest
+ContainerName=homarr
+PublishPort=7575:7575
+
+Volume=/opt/podmnts/homarr/configs:/app/data/configs:Z
+Volume=/opt/podmnts/homarr/icons:/app/public/icons:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

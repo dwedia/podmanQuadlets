@@ -1,0 +1,25 @@
+[Unit]
+Description=Mealie Quadlet
+
+[Container]
+Image=docker.io/hkotel/mealie:latest
+ContainerName=Mealie
+PublishPort=9925:80
+User=root
+Group=root
+
+Environment=RECIPE_PUBLIC='true'
+Environment=RECIPE_SHOW_NUTRITION='true'
+Environment=RECIPE_SHOW_ASSETS='true'
+Environment=RECIPE_LANDSCAPE_VIEW='true'
+Environment=RECIPE_DISABLE_COMMENTS='false'
+Environment=RECIPE_DISABLE_AMOUNT='false'
+
+Volume=/opt/podmnts/mealie/:/app/data:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

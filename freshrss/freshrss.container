@@ -1,0 +1,18 @@
+[Unit]
+Description=FreshRSS Quadlet
+
+[Container]
+Image=lscr.io/linuxserver/freshrss:latest
+ContainerName=FreshRSS
+PublishPort=8070:80
+User=root
+Group=root
+Volume=/opt/podmnts/freshrss/config:/config:Z
+Environment=Timezone=Europe/Copenhagen
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
