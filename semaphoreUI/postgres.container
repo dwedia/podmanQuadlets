@@ -4,7 +4,8 @@ Description=postgres
 
 [Container]
 Image=docker.io/postgres:14
-ContainerName=postgres
+ContainerName=postgres-Quadlet
+HostName=postgres
 
 Volume=/opt/podmnts/semaphore-postgres:/var/lib/postgresql/data:Z
 

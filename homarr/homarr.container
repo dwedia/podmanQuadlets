@@ -3,7 +3,7 @@ Description=Homarr Quadlet
 
 [Container]
 Image=ghcr.io/ajnart/homarr:latest
-ContainerName=homarr
+ContainerName=homarr-Quadlet
 PublishPort=7575:7575
 
 Volume=/opt/podmnts/homarr/configs:/app/data/configs:Z

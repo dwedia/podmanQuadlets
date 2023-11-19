@@ -7,7 +7,7 @@ Description=Semaphore
 [Container]
 Image=docker.io/semaphoreui/semaphore:latest
 PublishPort=3000:3000
-ContainerName=SemaphoreUI
+ContainerName=SemaphoreUI-Quadlet
 
 Environment=SEMAPHORE_DB_DIALECT=bolt
 Environment=SEMAPHORE_ADMIN_PASSWORD=changeme

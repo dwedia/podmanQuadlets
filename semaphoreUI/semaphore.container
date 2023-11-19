@@ -6,7 +6,7 @@ Requires=postgres.service
 [Container]
 Image=docker.io/semaphoreui/semaphore:latest
 PublishPort=3000:3000
-ContainerName=SemaphoreUI
+ContainerName=SemaphoreUI-Quadlet
 Network=semaphore.network
 EnvironmentFile=semaphore.env
 
