@@ -1,0 +1,21 @@
+[Unit]
+Description=Semaphore
+# After=network.target
+Requires=postgres.service
+
+[Container]
+Image=docker.io/semaphoreui/semaphore:latest
+PublishPort=3000:3000
+ContainerName=SemaphoreUI
+Network=semaphore.network
+EnvironmentFile=semaphore.env
+
+[Service]
+# Restart service when sleep finishes
+Restart=always
+# Extend Timeout to allow time to pull the image
+TimeoutStartSec=900
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

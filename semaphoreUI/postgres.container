@@ -1,0 +1,23 @@
+[Unit]
+Description=postgres
+# After=network.target
+
+[Container]
+Image=docker.io/postgres:14
+ContainerName=postgres
+
+Volume=/opt/podmnts/semaphore-postgres:/var/lib/postgresql/data:Z
+
+EnvironmentFile=postgres.env
+
+Network=semaphore.network
+
+[Service]
+# Restart service when sleep finishes
+Restart=always
+# Extend Timeout to allow time to pull the image
+TimeoutStartSec=900
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

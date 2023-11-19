@@ -1,0 +1,28 @@
+# This Quadlet Unit file, launches Ansible Semaphore, with internal bolt DB.
+
+[Unit]
+Description=Semaphore
+# After=network.target
+
+[Container]
+Image=docker.io/semaphoreui/semaphore:latest
+PublishPort=3000:3000
+ContainerName=SemaphoreUI
+
+Environment=SEMAPHORE_DB_DIALECT=bolt
+Environment=SEMAPHORE_ADMIN_PASSWORD=changeme
+Environment=SEMAPHORE_ADMIN_NAME=admin
+Environment=SEMAPHORE_ADMIN_EMAIL=admin@semaphore.local
+Environment=SEMAPHORE_ADMIN=admin
+
+#Network=semaphore.network
+
+[Service]
+# Restart service when sleep finishes
+Restart=always
+# Extend Timeout to allow time to pull the image
+TimeoutStartSec=900
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

@@ -1,0 +1,5 @@
+[Network]
+Subnet=xxx.xxx.xxx.x/xx  # network ipaddr/cidr
+Gateway=xxx.xxx.xxx.x   # defgw ipp addr
+Label=app=xxxxxxxx  #label that describes what network is used for
+
