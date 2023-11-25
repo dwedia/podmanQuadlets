@@ -4,3 +4,23 @@ Description=Gluetun Quadlet
 [Container]
 Image=qmcgaw/gluetun:latest
 ContainerName=Gluetun-Quadlet
+
+AddCapability=NET_ADMIN
+
+PodmanArgs=--privileged --device /dev/net/tun:/dev/net/tun
+
+EnvironmentFile=secrets.txt
+EnvironmentFile=gluetun.env
+
+Network=vpnstack.network
+DNS=1.1.1.1
+
+Volume=/opt/podmnts/gluetun/config:/gluetun:Z
+
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
