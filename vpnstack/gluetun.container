@@ -2,7 +2,7 @@
 Description=Gluetun Quadlet
 
 [Container]
-Image=qmcgaw/gluetun:latest
+Image=docker.io/qmcgaw/gluetun:latest
 ContainerName=Gluetun-Quadlet
 
 AddCapability=NET_ADMIN
