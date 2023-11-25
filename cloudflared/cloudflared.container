@@ -1,0 +1,16 @@
+[Unit]
+Description=Cloudflared Quadlet
+
+[Container]
+Image=docker.io/cloudflare/cloudflared:latest
+ContainerName=Cloudflared-Quadlet
+EnvironmentFile=secrets.txt
+
+Exec=tunnel run
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
