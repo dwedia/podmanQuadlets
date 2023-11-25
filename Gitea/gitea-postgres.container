@@ -1,0 +1,23 @@
+[Unit]
+Description=Gitea-Postgres Quadlet
+
+[Container]
+Image=docker.io/postgres:14
+ContainerName=Gitea-Postgres-Quadlet
+HostName=gitea-postgres
+
+EnvironmentFile=gitea-postgres-secrets.txt
+#Environment=POSTGRES_USER=in secrets file
+#Environment=POSTGRES_PASSWORD=in secrets file
+#Environment=POSTGRES_DB=in secrets file
+
+Network=gitea.network
+
+Volume=/opt/podmnts/gitea/postgres:/var/lib/postgresql/data:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

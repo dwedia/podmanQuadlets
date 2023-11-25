@@ -1,0 +1,31 @@
+[Unit]
+Description=Gitea Quadlet
+Requires=gitea-postgres.service
+
+[Container]
+Image=docker.io/gitea/gitea:1.21.0
+ContainerName=Gitea-Quadlet
+
+PodmanArgs=-e PUID=1000 -e PGID=1000
+
+EnvironmentFile=gitea-secrets.txt
+#Environment=GITEA__database__DB_TYPE=in secrets file
+#Environment=GITEA__database__HOST=in secrets file
+#Environment=GITEA__database__NAME=in secrets file
+#Environment=GITEA__database__USER=in secrets file
+#Environment=GITEA__database__PASSWD=in secrets file
+
+Network=gitea.network
+PublishPort=3000:3000
+PublishPort=222:22
+
+Volume=/opt/podmnts/gitea/gitea:/data:Z
+Volume=/etc/timezone:/etc/timezone:ro
+Volume=/etc/localtime:/etc/localtime:ro
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
