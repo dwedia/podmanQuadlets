@@ -1,0 +1,29 @@
+[Unit]
+Description=Gluetun Quadlet
+Requires=gluetun.service
+
+[Container]
+Image=lscr.io/linuxserver/deluge:latest
+ContainerName=Deluge-Quadlet
+
+Network=vpnstack.network
+PublishPort=8112:8112
+PublishPort=6881:6881
+PublishPort=6881:6881/udp
+
+Environment=TimeZone=Europe/Copenhagen
+Environment=DELUGE_LOGLEVEL=error
+
+PodmanArgs=-e PUID=1000 -e PGID=1000
+
+Volume=/opt/podmnts/sabnzbd/config:/config:Z
+Volume=/opt/netmounts/new/Complete:/downloads
+Volume=/opt/netmounts/new/Incomplete:/incomplete-downloads
+
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
