@@ -1,0 +1,6 @@
+[Unit]
+Description=Gluetun Quadlet
+
+[Container]
+Image=qmcgaw/gluetun:latest
+ContainerName=Gluetun-Quadlet
