@@ -4,7 +4,7 @@ Description=Cloudflared Quadlet
 [Container]
 Image=docker.io/cloudflare/cloudflared:latest
 ContainerName=Cloudflared-Quadlet
-EnvironmentFile=/home/ramiraz/podmanQuadlets/cloudflared/secrets.txt
+EnvironmentFile=cloudflared-secrets.txt
 
 Exec=tunnel run
 
