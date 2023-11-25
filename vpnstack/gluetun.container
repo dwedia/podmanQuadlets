@@ -13,6 +13,10 @@ EnvironmentFile=secrets.txt
 EnvironmentFile=gluetun.env
 
 Network=vpnstack.network
+PublishPort=8112:8112
+PublishPort=6881:6881
+PublishPort=6881:6881/udp
+
 
 Volume=/opt/podmnts/gluetun/config:/gluetun:Z
 

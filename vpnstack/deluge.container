@@ -7,9 +7,9 @@ Image=lscr.io/linuxserver/deluge:latest
 ContainerName=Deluge-Quadlet
 
 Network=vpnstack.network
-PublishPort=8112:8112
-PublishPort=6881:6881
-PublishPort=6881:6881/udp
+#PublishPort=8112:8112
+#PublishPort=6881:6881
+#PublishPort=6881:6881/udp
 
 Environment=TimeZone=Europe/Copenhagen
 Environment=DELUGE_LOGLEVEL=error
