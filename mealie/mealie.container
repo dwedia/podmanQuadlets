@@ -17,6 +17,8 @@ Environment=RECIPE_DISABLE_AMOUNT='false'
 
 Volume=/opt/podmnts/mealie/:/app/data:Z
 
+PodmanArgs=--log-level=warn
+
 [Service]
 Restart=always
 TimeoutStartSec=900
