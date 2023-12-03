@@ -2,7 +2,7 @@
 Description=Wordpress Database Quadlet
 
 [Container]
-Image=docker.io/mysql:8.2.0-oracle
+Image=docker.io/mysql:8.2.0
 HostName=db
 ContainerName=wp-db-Quadlet
 EnvironmentFile=wp-db-secrets.env
