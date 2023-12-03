@@ -1,0 +1,4 @@
+[Network]
+Subnet=192.168.40.0/24
+Gateway=192.168.40.1   
+Label=app=wordpress  

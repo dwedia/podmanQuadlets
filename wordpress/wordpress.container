@@ -1,0 +1,21 @@
+[Unit]
+Description=Wordpress Quadlet
+Requires=wp-db.service
+
+[Container]
+Image=docker.io/Wordpress
+PublishPort=8080:80
+EnvironmentFile=wordpress-secrets.env
+#Environment=WORDPRESS_DB_HOST=db
+#Environment=WORDPRESS_DB_USER=exampleuser
+#Environment=WORDPRESS_DB_PASSWORD=examplepass
+#Environment=WORDPRESS_DB_NAME=exampledb
+Volume=/opt/podmnts/wordpress/html:/var/www/html
+Network=worpress.network
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

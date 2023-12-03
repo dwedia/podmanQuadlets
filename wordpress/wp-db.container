@@ -1,0 +1,19 @@
+[Unit]
+Description=Wordpress Database Quadlet
+
+[Container]
+Image=docker.io/mysql:5.7
+HostName=db
+EnvironmentFile=wp-db-secrets.env
+#Environment=MYSQL_DATABASE=exampledb
+#Environment=MYSQL_USER=exampleuser
+#Environment=MYSQL_PASSWORD=examplepass
+#Environment=MYSQL_RANDOM_ROOT_PASSWORD=1
+Volume=/opt/podmnts/wordpress/db:/var/lib/mysql
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
