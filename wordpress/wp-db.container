@@ -10,6 +10,7 @@ EnvironmentFile=wp-db-secrets.env
 #Environment=MYSQL_PASSWORD=examplepass
 #Environment=MYSQL_RANDOM_ROOT_PASSWORD=1
 Volume=/opt/podmnts/wordpress/db:/var/lib/mysql
+Network=wordpress.network
 
 [Service]
 Restart=always

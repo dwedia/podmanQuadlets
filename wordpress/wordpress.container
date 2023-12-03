@@ -11,7 +11,7 @@ EnvironmentFile=wordpress-secrets.env
 #Environment=WORDPRESS_DB_PASSWORD=examplepass
 #Environment=WORDPRESS_DB_NAME=exampledb
 Volume=/opt/podmnts/wordpress/html:/var/www/html
-Network=worpress.network
+Network=wordpress.network
 
 [Service]
 Restart=always
