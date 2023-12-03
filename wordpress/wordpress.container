@@ -3,7 +3,7 @@ Description=Wordpress Quadlet
 Requires=wp-db.service
 
 [Container]
-Image=docker.io/Wordpress
+Image=docker.io/wordpress
 PublishPort=8080:80
 EnvironmentFile=wordpress-secrets.env
 #Environment=WORDPRESS_DB_HOST=db
