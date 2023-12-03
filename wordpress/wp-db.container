@@ -2,7 +2,7 @@
 Description=Wordpress Database Quadlet
 
 [Container]
-Image=docker.io/mysql:5.7
+Image=docker.io/mysql:8.2.0-oracle
 HostName=db
 EnvironmentFile=wp-db-secrets.env
 #Environment=MYSQL_DATABASE=exampledb
