@@ -10,7 +10,7 @@ EnvironmentFile=wordpress-secrets.env
 #Environment=WORDPRESS_DB_USER=exampleuser
 #Environment=WORDPRESS_DB_PASSWORD=examplepass
 #Environment=WORDPRESS_DB_NAME=exampledb
-Volume=/opt/podmnts/wordpress/html:/var/www/html
+Volume=/opt/podmnts/wordpress/html:/var/www/html:Z
 Network=wordpress.network
 
 [Service]
