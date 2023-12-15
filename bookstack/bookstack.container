@@ -1,0 +1,20 @@
+[Unit]
+Description=Bookstack Quadlet
+Requires=bookstack-db.service
+
+[Container]
+Image=lscr.io/linuxserver/bookstack
+ContainerName=bookstack-quadlet
+HostName=bookstack
+PublishPort=6875:80
+EnvironmentFile=bookstack-secrets.env
+User=root
+Group=root
+Volume=/opt/podmnts/bookstack/bookstack_app_data:/config:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=Bookstack-db Quadlet
+
+[Container]
+Image=lscr.io/linuxserver/mariadb
+ContainerName=bookstack-db-quadlet
+HostName=bookstack_db
+User=root
+Group=root
+EnvironmentFile=bookstack-db-secrets.env
+Volume=/opt/podmnts/bookstack/bookstack_db_data:/config:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
