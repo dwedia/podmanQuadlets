@@ -11,6 +11,7 @@ EnvironmentFile=bookstack-secrets.env
 User=root
 Group=root
 Volume=/opt/podmnts/bookstack/bookstack_app_data:/config:Z
+Network=bookstack.network
 
 [Service]
 Restart=always
