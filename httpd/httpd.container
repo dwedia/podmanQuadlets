@@ -1,0 +1,16 @@
+[Unit]
+Description=httpd container quadlet file
+
+[Container]
+Image=docker.io/httpd:latest
+ContainerName=httpd-Quadlet
+PublishPort=80:80
+Volume=/opt/podmnts/apache/website:/usr/local/apache2/htdocs:Z
+Volume=/opt/podmnts/apache/config/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
