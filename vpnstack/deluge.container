@@ -6,17 +6,14 @@ Requires=gluetun.service
 Image=lscr.io/linuxserver/deluge:latest
 ContainerName=Deluge-Quadlet
 
-Network=vpnstack.network
-
-
 Environment=TimeZone=Europe/Copenhagen
 Environment=DELUGE_LOGLEVEL=error
 
-PodmanArgs=-e PUID=1000 -e PGID=1000
+PodmanArgs=-e PUID=1000 -e PGID=1000 --network container:gluetun-test
 
 Volume=/opt/podmnts/sabnzbd/config:/config:Z
-Volume=/opt/netmounts/new/Complete:/downloads
-Volume=/opt/netmounts/new/Incomplete:/incomplete-downloads
+Volume=/opt/podmnts/deluge/new/Torrents/Complete/:/downloads
+Volume=/opt/podmnts/deluge/new/Torrents/Incomplete/:/Incomplete
 
 
 [Service]
