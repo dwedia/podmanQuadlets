@@ -1,5 +1,5 @@
 [Unit]
-Description=Gluetun Quadlet
+Description=Deluge Quadlet
 Requires=gluetun.service
 
 [Container]
