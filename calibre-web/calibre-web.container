@@ -10,7 +10,7 @@ Volume=/opt/podmnts/calibre-web:/config:Z
 Volume=/opt/podmnts/calibre-web/library:/books:Z
 User=root
 Group=root
-Timezone=Europe/Copenhagen
+PodmanArgs=-e TZ=Europe/Copenhagen
 
 [Service]
 Restart=always
