@@ -1,0 +1,20 @@
+[Unit]
+Description=Calibre-Web Quadlet
+
+[Container]
+Image=lscr.io/linuxserver/calibre-web:latest
+ContainerName=Calibre-Web-Quadlet
+PublishPort=8083:8083
+Environment=
+Volume=/opt/podmnts/calibre-web:/config
+Volume=/opt/podmnts/calibre-web/library:/books
+User=root
+Group=root
+Timezone=Europe/Copenhagen
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
