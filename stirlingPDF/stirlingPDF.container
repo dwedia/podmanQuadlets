@@ -1,0 +1,19 @@
+[Unit]
+Description=StirlingPDF Quadlet
+
+[Container]
+Image=docker.io/frooodle/s-pdf:latest
+ContainerName=stirlingPDF-Quadlet
+PublishPort=8081:8080
+PodmanArgs=-e DOCKER_ENABLE_SECURITY=false -e INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false -e LANGS=en_DK
+
+Volume=/opt/podmnts/stirlingPDF/trainingData:/usr/share/tesseract-ocr/5/tessdata:Z
+Volume=/opt/podmnts/stirlingPDF/extraConfigs:/configs:Z
+Volume=/opt/podmnts/stirlingPDF/logs:/logs:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
