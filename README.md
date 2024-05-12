@@ -104,5 +104,23 @@ systemctl --user start filenameBeforeDotContainer.service
 systemctl --user stop filenameBeforeDotContainer.service
 ```
 
+### logging
+
+when using Quadlets, podman will send systemlogs to the SystemD Journal. This includes the podman run output (where we can see if our container start, and if it does not, why it doesnt.) If we forget the create the required folders, the error messages will be output to the SystemD Journal. 
+
+To see these messages, we can use the journalctl command.
+```bash
+journalctl -fe
+```
+
+The root user (and members of the wheel and adm groups) has access to this command out of the box.
+If we are running our Quadlets as rootless, we need to give the user we are running them as, access to the journalctl command. This can be done by adding the user to the "systemd-journal" group
+```bash
+# this has to be done as root, or as a user with sudo rights...
+usermod -aG systemd-journal <username>
+```
+
+
+
 ## Will my Containers start on boot?
 If you set the restart policy above to "always", then systemd will start the container on boot. It will also start it again, if you stop it with podman stop... It must be stopped with systemctl stop.
