@@ -1,5 +1,5 @@
 [Unit]
-Description=StirlingPDF Quadlet
+Description=uptimeKuma Quadlet
 
 [Container]
 Image=docker.io/louislam/uptime-kuma:latest
