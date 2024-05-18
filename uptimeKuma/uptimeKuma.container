@@ -1,0 +1,15 @@
+[Unit]
+Description=StirlingPDF Quadlet
+
+[Container]
+Image=docker.io/louislam/uptime-kuma:latest
+ContainerName=uptimeKuma-Quadlet
+PublishPort=3001:3001
+Volume=/opt/podmnts/uptimeKuma/data:/app/data:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
