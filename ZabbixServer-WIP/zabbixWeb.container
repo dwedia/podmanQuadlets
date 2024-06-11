@@ -1,0 +1,23 @@
+[Unit]
+Description=ZabbixWeb
+# After=network.target
+Requires=zabbixMySQL.service
+
+[Container]
+Image=docker.io/zabbix/zabbix-server-mysql:alpine-7.0.0
+ContainerName=zabbixWeb-Quadlet
+AddCapability=net_raw
+EnvironmentFile=zabbixWeb.env
+HostName=zabbixWeb
+
+Network=zabbixNet.network
+
+[Service]
+# Restart service when sleep finishes
+Restart=always
+# Extend Timeout to allow time to pull the image
+TimeoutStartSec=900
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

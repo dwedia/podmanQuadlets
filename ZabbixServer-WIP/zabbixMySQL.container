@@ -1,0 +1,21 @@
+[Unit]
+Description=ZabbixServer
+# After=network.target
+
+[Container]
+Image=docker.io/mysql:8.0.37
+ContainerName=zabbixServerMySQL-Quadlet
+HostName=zabbixMySQL
+EnvironmentFile=zabbixMySQL.env
+
+Network=zabbixNet.network
+
+[Service]
+# Restart service when sleep finishes
+Restart=always
+# Extend Timeout to allow time to pull the image
+TimeoutStartSec=900
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

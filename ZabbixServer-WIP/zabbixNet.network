@@ -1,0 +1,7 @@
+[Network]
+# network ipaddr/cidr
+Subnet=192.168.200.0/24  
+# defgw ipp addr
+Gateway=192.168.200.1
+#label that describes what network is used for
+Label=app=ZabbixNet 
