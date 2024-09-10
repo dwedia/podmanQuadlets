@@ -1,0 +1,22 @@
+[Unit]
+Description=Dashy Quadlet
+
+[Container]
+Image=ghcr.io/lissy93/dashy:latest
+ContainerName=Dashy-Quadlet
+
+#EnvironmentFile=
+#Environment=
+
+PublishPort=8070:8080
+
+PodmanArgs=-e PUID=1000 -e PGID=1000
+
+Volume=/opt/podmnts/dashy/my-config.yml:/app/user-data/conf.yml:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
