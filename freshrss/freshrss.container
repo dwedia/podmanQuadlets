@@ -4,7 +4,7 @@ Description=FreshRSS Quadlet
 [Container]
 Image=lscr.io/linuxserver/freshrss:latest
 ContainerName=FreshRSS-Quadlet
-PublishPort=8070:80
+PublishPort=8060:80
 User=root
 Group=root
 Volume=/opt/podmnts/freshrss/config:/config:Z
