@@ -1,6 +1,6 @@
 [Unit]
 Description=SabNZBd Quadlet
-Requires=sabnzbd.service
+Requires=gluetun.service
 
 [Container]
 Image=lscr.io/linuxserver/sabnzbd:latest

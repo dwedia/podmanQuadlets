@@ -1,6 +1,6 @@
 [Unit]
 Description=Sonarr Quadlet
-Requires=sonarr.service
+Requires=gluetun.service
 
 [Container]
 Image=lscr.io/linuxserver/sonarr:latest

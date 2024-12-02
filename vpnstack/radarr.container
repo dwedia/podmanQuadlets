@@ -1,6 +1,6 @@
 [Unit]
 Description=Radarr Quadlet
-Requires=radarr.service
+Requires=gluetun.service
 
 [Container]
 Image=lscr.io/linuxserver/radarr:latest

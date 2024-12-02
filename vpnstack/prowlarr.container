@@ -1,6 +1,6 @@
 [Unit]
 Description=Prowlarr Quadlet
-Requires=prowlarr.service
+Requires=gluetun.service
 
 [Container]
 Image=lscr.io/linuxserver/prowlarr:latest
