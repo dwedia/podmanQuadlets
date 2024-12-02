@@ -10,7 +10,7 @@ HostName=Deluge-Quadlet
 Environment=TimeZone=Europe/Copenhagen
 Environment=DELUGE_LOGLEVEL=error
 
-PodmanArgs=-e PUID=1000 -e PGID=1000 --network container:Gluetun-Quadlet
+PodmanArgs=-e PUID=1000 -e PGID=1000 
 
 Volume=/opt/podmnts/sabnzbd/config:/config:Z
 Volume=/opt/podmnts/deluge/new/Torrents/Complete/:/downloads
