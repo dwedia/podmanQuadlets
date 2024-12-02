@@ -4,7 +4,7 @@ Description=Gluetun Quadlet
 [Container]
 Image=docker.io/qmcgaw/gluetun:latest
 ContainerName=Gluetun-Quadlet
-
+HostName=Gluetun-Quadlet
 AddCapability=NET_ADMIN
 
 PodmanArgs=--privileged --device /dev/net/tun --dns 1.1.1.1
@@ -17,6 +17,7 @@ PublishPort=8112:8112
 PublishPort=6881:6881
 PublishPort=6881:6881/udp
 
+Network=vpnstack
 
 Volume=/opt/podmnts/gluetun/config:/gluetun:Z
 

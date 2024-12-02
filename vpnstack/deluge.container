@@ -5,6 +5,7 @@ Requires=gluetun.service
 [Container]
 Image=lscr.io/linuxserver/deluge:latest
 ContainerName=Deluge-Quadlet
+HostName=Deluge-Quadlet
 
 Environment=TimeZone=Europe/Copenhagen
 Environment=DELUGE_LOGLEVEL=error
@@ -15,6 +16,7 @@ Volume=/opt/podmnts/sabnzbd/config:/config:Z
 Volume=/opt/podmnts/deluge/new/Torrents/Complete/:/downloads
 Volume=/opt/podmnts/deluge/new/Torrents/Incomplete/:/Incomplete
 
+Network=container:Gluetun-Quadlet
 
 [Service]
 Restart=always
