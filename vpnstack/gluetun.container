@@ -9,6 +9,7 @@ AddCapability=NET_ADMIN
 
 PodmanArgs=--privileged --device /dev/net/tun --dns 1.1.1.1
 
+# The secrets.txt file are for putting the vpn username and password. remember to add this file to your .gitignore, and NEVER commit it to your git repository
 EnvironmentFile=secrets.txt
 EnvironmentFile=gluetun.env
 
