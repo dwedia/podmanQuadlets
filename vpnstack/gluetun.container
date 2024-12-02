@@ -17,7 +17,6 @@ PublishPort=8112:8112
 PublishPort=6881:6881
 PublishPort=6881:6881/udp
 
-Network=vpnstack
 
 Volume=/opt/podmnts/gluetun/config:/gluetun:Z
 
