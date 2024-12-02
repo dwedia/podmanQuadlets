@@ -12,10 +12,22 @@ PodmanArgs=--privileged --device /dev/net/tun --dns 1.1.1.1
 EnvironmentFile=secrets.txt
 EnvironmentFile=gluetun.env
 
-
+# Deluge ports
 PublishPort=8112:8112
 PublishPort=6881:6881
 PublishPort=6881:6881/udp
+
+# SabNZBd port
+PublishPort=8080:8080
+
+# Prowlarr port
+PublishPort=9696:9696
+
+# Sonarr port
+PublishPort=8989:8989
+
+# Radarr port
+PublishPort=7878:7878
 
 
 Volume=/opt/podmnts/gluetun/config:/gluetun:Z
