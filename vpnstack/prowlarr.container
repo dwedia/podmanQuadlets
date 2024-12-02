@@ -1,0 +1,23 @@
+[Unit]
+Description=Prowlarr Quadlet
+Requires=prowlarr.service
+
+[Container]
+Image=lscr.io/linuxserver/prowlarr:latest
+ContainerName=prowlarr-Quadlet
+HostName=prowlarr-Quadlet
+
+Environment=TimeZone=Europe/Copenhagen
+
+PodmanArgs=-e PUID=1000 -e PGID=1000 
+
+Volume=/opt/podmnts/prowlarr/config:/config:Z
+
+Network=container:Gluetun-Quadlet
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,0 +1,24 @@
+[Unit]
+Description=Radarr Quadlet
+Requires=radarr.service
+
+[Container]
+Image=lscr.io/linuxserver/radarr:latest
+ContainerName=radarr-Quadlet
+HostName=radarr-Quadlet
+
+Environment=TimeZone=Europe/Copenhagen
+
+PodmanArgs=-e PUID=1000 -e PGID=1000 
+
+Volume=/opt/podmnts/radarr/config:/config:Z
+Volume=/opt/netmounts/movies:/movies
+
+Network=container:Gluetun-Quadlet
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

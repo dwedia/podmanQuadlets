@@ -1,0 +1,24 @@
+[Unit]
+Description=Sonarr Quadlet
+Requires=sonarr.service
+
+[Container]
+Image=lscr.io/linuxserver/sonarr:latest
+ContainerName=sonarr-Quadlet
+HostName=sonarr-Quadlet
+
+Environment=TimeZone=Europe/Copenhagen
+
+PodmanArgs=-e PUID=1000 -e PGID=1000 
+
+Volume=/opt/podmnts/sonarr/config:/config:Z
+Volume=/opt/netmounts/tv:/tv
+
+Network=container:Gluetun-Quadlet
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

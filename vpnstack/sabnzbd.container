@@ -1,0 +1,25 @@
+[Unit]
+Description=SabNZBd Quadlet
+Requires=sabnzbd.service
+
+[Container]
+Image=lscr.io/linuxserver/sabnzbd:latest
+ContainerName=sabnzbd-Quadlet
+HostName=sabnzbd-Quadlet
+
+Environment=TimeZone=Europe/Copenhagen
+
+PodmanArgs=-e PUID=1000 -e PGID=1000 
+
+Volume=/opt/podmnts/sabnzbd/config:/config:Z
+Volume=/opt/netmounts/new/Complete:/downloads
+Volume=/opt/netmounts/new/Incomplete:/incomplete-downloads
+
+Network=container:Gluetun-Quadlet
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
