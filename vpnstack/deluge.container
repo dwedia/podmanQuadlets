@@ -13,8 +13,8 @@ Environment=DELUGE_LOGLEVEL=error
 PodmanArgs=-e PUID=1000 -e PGID=1000 
 
 Volume=/opt/podmnts/sabnzbd/config:/config:Z
-Volume=/opt/podmnts/deluge/new/Torrents/Complete/:/downloads
-Volume=/opt/podmnts/deluge/new/Torrents/Incomplete/:/Incomplete
+Volume=/opt/netmounts/new/Torrents/Complete/:/downloads
+Volume=/opt/netmounts/new/Torrents/Incomplete/:/Incomplete
 
 Network=container:Gluetun-Quadlet
 
