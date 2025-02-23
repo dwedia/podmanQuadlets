@@ -1,0 +1,14 @@
+[Unit]
+Description=httpd container quadlet file
+
+[Container]
+Image=docker.io/mattwebbio/orbital-sync:1
+ContainerName=orbitalSync-Quadlet
+EnvironmentFile=orbitalSync.env
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
