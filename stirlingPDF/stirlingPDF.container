@@ -5,6 +5,7 @@ Description=StirlingPDF Quadlet
 Image=docker.io/frooodle/s-pdf:latest
 ContainerName=stirlingPDF-Quadlet
 PublishPort=8081:8080
+AutoUpdate=registry
 PodmanArgs=-e DOCKER_ENABLE_SECURITY=false -e INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false -e LANGS=en_DK
 
 Volume=/opt/podmnts/stirlingPDF/trainingData:/usr/share/tesseract-ocr/5/tessdata:Z
