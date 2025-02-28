@@ -1,0 +1,14 @@
+[Unit]
+Description=httpd container quadlet file
+
+[Container]
+Image=ghcr.io/lovelaze/nebula-sync:latest
+ContainerName=nebulaSync-Quadlet
+EnvironmentFile=nebulaSync.secrets 
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
