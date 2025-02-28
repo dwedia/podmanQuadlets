@@ -7,6 +7,7 @@ ContainerName=FreshRSS-Quadlet
 PublishPort=8060:80
 User=root
 Group=root
+AutoUpdate=registry
 Volume=/opt/podmnts/freshrss/config:/config:Z
 Environment=Timezone=Europe/Copenhagen
 
