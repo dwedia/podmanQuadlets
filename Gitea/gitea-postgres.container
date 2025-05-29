@@ -13,7 +13,7 @@ EnvironmentFile=gitea-secrets.env
 
 #Network=gitea.network # not needed when in a pod. containers in a pod talk on localhost
 
-Volume=/opt/podmnts/gitea/postgres:/var/lib/postgresql/data:Z
+Volume=gitea-postgres-data:/var/lib/postgresql/data:Z
 Pod=gitea.pod
 
 

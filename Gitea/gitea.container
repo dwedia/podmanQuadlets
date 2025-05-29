@@ -8,7 +8,7 @@ ContainerName=gitea-Quadlet
 
 PodmanArgs=-e PUID=1000 -e PGID=1000
 
-EnvironmentFile=gitea-secrets.txt
+EnvironmentFile=gitea-secrets.env
 #Environment=GITEA__database__DB_TYPE=in secrets file
 #Environment=GITEA__database__HOST=in secrets file
 #Environment=GITEA__database__NAME=in secrets file
@@ -19,8 +19,8 @@ EnvironmentFile=gitea-secrets.txt
 #PublishPort=3000:3000 # in .pod file
 #PublishPort=222:22 # in .pod file
 
-Volume=/opt/podmnts/gitea/gitea:/data:Z
-Volume=/etc/timezone:/etc/timezone:ro
+Volume=gitea-data:/data:Z
+Volume=/etc/timezone:/etc/timezone:ro 
 Volume=/etc/localtime:/etc/localtime:ro
 
 Pod=gitea.pod
