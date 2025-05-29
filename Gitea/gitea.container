@@ -3,7 +3,7 @@ Description=Gitea Quadlet
 Requires=gitea-postgres.service
 
 [Container]
-Image=docker.io/gitea/gitea:1.21.0
+Image=docker.io/gitea/gitea:1.23.8
 ContainerName=gitea-Quadlet
 
 PodmanArgs=-e PUID=1000 -e PGID=1000
