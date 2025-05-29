@@ -1,6 +1,6 @@
 [Pod]
 PodName=giteaPod
 PublishPort=3000:3000 
-PublishPort=222:22 
+PublishPort=2222:22 
 
 # any ports that any of the containers in your pod needs, has to be declared here, and not in the .container file.
