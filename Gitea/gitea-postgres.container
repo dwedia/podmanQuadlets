@@ -4,7 +4,7 @@ Description=Gitea-Postgres Quadlet
 [Container]
 Image=docker.io/postgres:14
 ContainerName=gitea-Postgres-Quadlet
-HostName=gitea-postgres
+#HostName=gitea-postgres
 
 EnvironmentFile=gitea-secrets.env
 #Environment=POSTGRES_USER=in secrets file
