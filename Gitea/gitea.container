@@ -4,7 +4,7 @@ Requires=gitea-postgres.service
 
 [Container]
 Image=docker.io/gitea/gitea:1.21.0
-ContainerName=Gitea-Quadlet
+ContainerName=gitea-Quadlet
 
 PodmanArgs=-e PUID=1000 -e PGID=1000
 
@@ -15,13 +15,15 @@ EnvironmentFile=gitea-secrets.txt
 #Environment=GITEA__database__USER=in secrets file
 #Environment=GITEA__database__PASSWD=in secrets file
 
-Network=gitea.network
-PublishPort=3000:3000
-PublishPort=222:22
+#Network=gitea.network # not needed when in a pod. containers in a pod talk on localhost
+#PublishPort=3000:3000 # in .pod file
+#PublishPort=222:22 # in .pod file
 
 Volume=/opt/podmnts/gitea/gitea:/data:Z
 Volume=/etc/timezone:/etc/timezone:ro
 Volume=/etc/localtime:/etc/localtime:ro
+
+Pod=gitea.pod
 
 [Service]
 Restart=always

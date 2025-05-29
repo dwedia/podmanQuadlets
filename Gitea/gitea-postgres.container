@@ -3,17 +3,19 @@ Description=Gitea-Postgres Quadlet
 
 [Container]
 Image=docker.io/postgres:14
-ContainerName=Gitea-Postgres-Quadlet
+ContainerName=gitea-Postgres-Quadlet
 HostName=gitea-postgres
 
-EnvironmentFile=gitea-postgres-secrets.txt
+EnvironmentFile=gitea-secrets.env
 #Environment=POSTGRES_USER=in secrets file
 #Environment=POSTGRES_PASSWORD=in secrets file
 #Environment=POSTGRES_DB=in secrets file
 
-Network=gitea.network
+#Network=gitea.network # not needed when in a pod. containers in a pod talk on localhost
 
 Volume=/opt/podmnts/gitea/postgres:/var/lib/postgresql/data:Z
+Pod=gitea.pod
+
 
 [Service]
 Restart=always
