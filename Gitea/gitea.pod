@@ -1,4 +1,4 @@
-[pod]
+[Pod]
 PodName=giteaPod
 PublishPort=3000:3000 
 PublishPort=222:22 
