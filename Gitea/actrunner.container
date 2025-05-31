@@ -10,7 +10,7 @@ EnvironmentFile=gitea-secrets.env
 Environment=CONFIG_FILE=/data/config.yaml
 Environment=GITEA_RUNNER_NAME=test-runner
 
-Volume=actrunner-data:/data:Z
+Volume=/opt/podman/actrunner/data:/data:Z
 Volume=%t/podman/podman.sock:/var/run/docker.sock 
 
 Pod=gitea.pod
