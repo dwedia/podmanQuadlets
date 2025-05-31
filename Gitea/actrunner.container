@@ -1,0 +1,23 @@
+[Unit]
+Description=Gitea Act Runner Quadlet
+Requires=gitea.service
+
+[Container]
+Image=docker.io/gitea/act_runner:nightly
+ContainerName=actRunner-Quadlet
+
+EnvironmentFile=gitea-secrets.env
+Env=CONFIG_FILE=/data/config.yaml
+Env=GITEA_RUNNER_NAME=test-runner
+
+Volume=actrunner-data:/data:Z
+Volume=%t/podman/podman.sock:/var/run/docker.sock 
+
+Pod=gitea.pod
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
