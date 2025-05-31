@@ -7,8 +7,8 @@ Image=docker.io/gitea/act_runner:nightly
 ContainerName=actRunner-Quadlet
 
 EnvironmentFile=gitea-secrets.env
-Env=CONFIG_FILE=/data/config.yaml
-Env=GITEA_RUNNER_NAME=test-runner
+Environment=CONFIG_FILE=/data/config.yaml
+Environment=GITEA_RUNNER_NAME=test-runner
 
 Volume=actrunner-data:/data:Z
 Volume=%t/podman/podman.sock:/var/run/docker.sock 
