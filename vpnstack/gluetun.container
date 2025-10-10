@@ -30,8 +30,7 @@ PublishPort=8989:8989
 # Radarr port
 PublishPort=7878:7878
 
-
-Volume=/opt/podmnts/gluetun/config:/gluetun:Z
+Volume=gluetun-data:/gluetun:Z
 
 
 [Service]
